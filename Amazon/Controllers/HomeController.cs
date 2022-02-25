@@ -1,4 +1,5 @@
 ﻿using Amazon.Models;
+using Amazon.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,12 +18,22 @@ namespace Amazon.Controllers
         {
             int pageSize = 5;
 
-            var blah = repo.Books
+            var x = new BooksViewModel
+            {
+                Books = repo.Books
                 .OrderBy(b => b.Title)
                 .Skip((pageNum - 1) * pageSize)
-                .Take(pageSize);
+                .Take(pageSize),
 
-            return View(blah);
+                PageInfo = new PageInfo
+                {
+                    TotalNumBooks = repo.Books.Count(),
+                    BooksPerPage = pageSize,
+                    CurrentPage = pageNum
+                }
+            };
+
+            return View(x);
         }
     }
 }
