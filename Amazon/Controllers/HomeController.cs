@@ -15,7 +15,9 @@ namespace Amazon.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var blah = context.Books.ToList();
+
+            return View(blah);
         }
     }
 }

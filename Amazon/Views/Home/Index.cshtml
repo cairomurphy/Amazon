@@ -1,3 +1,22 @@
 ﻿
 @{
 }
+
+@model List<Book>
+
+<h1>The Amazon Project</h1>
+
+@foreach (Book b in Model)
+{
+    <h3>@b.Title</h3>
+
+    <ul>
+        <li>Category: @b.Category</li>
+        <li>Author: @b.Author</li>
+        <li>Isbn: @b.Isbn</li>
+        <li>Classification: @b.Classification</li>
+        <li>Price: @b.Price</li>
+        <li>Publisher: @b.Publisher</li>
+    </ul>
+    <br />
+}

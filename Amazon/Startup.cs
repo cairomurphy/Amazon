@@ -28,7 +28,7 @@ namespace Amazon
 
             services.AddDbContext<BookstoreContext>(options =>
             {
-                options.UseSqlite(Configuration["ConnnectionStrings:BookDBConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:BookDBConnection"]);
             });
         }
 
