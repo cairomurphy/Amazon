@@ -13,9 +13,14 @@ namespace Amazon.Controllers
 
         public HomeController(IBookStoreRepository temp) => repo = temp;
 
-        public IActionResult Index()
+        public IActionResult Index(int pageNum = 1)
         {
-            var blah = repo.Books.ToList();
+            int pageSize = 5;
+
+            var blah = repo.Books
+                .OrderBy(b => b.Title)
+                .Skip((pageNum - 1) * pageSize)
+                .Take(pageSize);
 
             return View(blah);
         }
