@@ -9,13 +9,13 @@ namespace Amazon.Controllers
 {
     public class HomeController : Controller
     {
-        private BookstoreContext context { get; set; }
+        private IBookStoreRepository repo;
 
-        public HomeController(BookstoreContext temp) => context = temp;
+        public HomeController(IBookStoreRepository temp) => repo = temp;
 
         public IActionResult Index()
         {
-            var blah = context.Books.ToList();
+            var blah = repo.Books.ToList();
 
             return View(blah);
         }
