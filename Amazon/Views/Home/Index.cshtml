@@ -9,18 +9,7 @@
 
 @foreach (Book b in Model.Books)
 {
-    <h3>@b.Title</h3>
-
-    <ul>
-        <li>Category: @b.Category</li>
-        <li>Author: @b.Author</li>
-        <li>Isbn: @b.Isbn</li>
-        <li>Classification: @b.Classification</li>
-        <li>Price: @b.Price</li>
-        <li>Publisher: @b.Publisher</li>
-        <li>Number of Pages: @b.PageCount</li>
-    </ul>
-    <br />
+    <partial name="BookSummary" model="b"/>
 }
 
 <div page-model="@Model.PageInfo" page-action="Index"></div>
