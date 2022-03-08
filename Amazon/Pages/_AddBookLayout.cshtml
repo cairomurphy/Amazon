@@ -7,13 +7,19 @@
     <link href="~/lib/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-
-    <div class="bg-dark text-white p-2">
-        AMAZON
+    <div class="bg-dark text-white p-2" style="text-align:center">
+        <span class="navbar-brand ml-2">Amazon</span>
     </div>
 
-    <div class="m-1 p-1">
-        @RenderBody()
+    <br />
+
+    <div class="row m-1 p-1">
+
+        <div>
+            @RenderBody()
+        </div>
+
+        <footer style="padding-top:50px; text-align:center;">Copyright Amazon 2022</footer>
     </div>
 </body>
 </html>
