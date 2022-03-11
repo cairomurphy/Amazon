@@ -55,6 +55,21 @@ namespace Amazon
             app.UseSession();
             app.UseRouting();
 
+            //security
+            app.Use(async (context, next) => 
+            {
+                context.Response.Headers.Add("X-Xss-Protection", "1");
+                await next();
+            });
+            app.Use(async (ctx, next) =>
+            {
+                ctx.Response.Headers.Add("Content-Security-Policy",
+                "Content-Security-Policy: default-src 'self';font-src fonts.gstatic.com;style-src 'self' fonts.googleapis.com");
+                await next();
+            });
+
+            app.UseHsts();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("typepage",
