@@ -9,6 +9,7 @@
             <th>Book ID</th>
             <th>Book Title</th>
             <th>Book Category</th>
+            <th>ISBN</th>
         </tr>
 
     </thead>
@@ -24,6 +25,7 @@
                         <td>@b.BookId</td>
                         <td>@b.Title</td>
                         <td>@b.Category</td>
+                        <td>@b.Isbn</td>
 
                         <td>
                             <NavLink class="btn btn-info btn-sm" href="@GetDetailsUrl(b.BookId)">Details</NavLink>

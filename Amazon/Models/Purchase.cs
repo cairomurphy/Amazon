@@ -15,20 +15,28 @@ namespace Amazon.Models
 
         [BindNever]
         public ICollection<BasketLineItem> Lines { get; set; }
+
         [Required(ErrorMessage = "Please enter a name")]
         public string Name { get; set; }
+
         [Required(ErrorMessage = "Please enter the first line")]
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public string AddressLine3 { get; set; }
+
         [Required(ErrorMessage = "Please enter the a city name")]
         public string City { get; set; }
+
         [Required(ErrorMessage = "Please enter the a state")]
         public string State { get; set; }
+
+        [Required(ErrorMessage = "Please enter the a zip")]
         public string Zip { get; set; }
+
         [Required(ErrorMessage = "Please enter the a country")]
         public string Country { get; set; }
         public bool Gift { get; set; }
+
         [BindNever]
         public bool PurchaseReceived { get; set; }
     }

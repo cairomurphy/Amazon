@@ -8,7 +8,7 @@
 
 <h3 class="bg-@ThemeColor text-white text-center p-1">@TitleText a Book</h3>
 
-<EditForm Model="b" OnValidSubmit="SaveBookInThisScope">
+<EditForm Model="b" OnValidSubmit="SaveBook">
 
     <DataAnnotationsValidator></DataAnnotationsValidator>
 
@@ -39,6 +39,12 @@
         <label>Category:</label>
         <ValidationMessage For="@(() => b.Category)"></ValidationMessage>
         <InputText class="form-control" @bind-Value="b.Category"></InputText>
+    </div>
+
+    <div class="form-group">
+        <label>ISBN:</label>
+        <ValidationMessage For="@(() => b.Isbn)"></ValidationMessage>
+        <InputText class="form-control" @bind-Value="b.Isbn"></InputText>
     </div>
 
     <div class="form-group">
@@ -79,7 +85,7 @@
         }
     }
 
-    public void SaveBookInThisScope()
+    public void SaveBook()
     {
         if (Id == 0) //New Book
         {
