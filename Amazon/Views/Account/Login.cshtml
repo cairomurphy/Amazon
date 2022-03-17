@@ -15,9 +15,21 @@
 </head>
 
 <body>
+    @* For the extra bootstrap styles I used a link-danger and also a bg-warning *@
 
-    <div class="bg-dark text-white p-2">
-        <span class="navbar-brand m-l-2">AMAZON</span>
+    <div class="bg-dark text-white p-2 vstack">
+        <span class="navbar-brand m-l-2 carousel-fade blockquote progress-bar-animated">AMAZON</span>
+    </div>
+
+    <div class="row">
+        <div class="col-10 bg-warning carousel-dark ">
+            <p class="gy-1 table-hover ">In order to access this website as admin you must enter the correct credentials below:</p>
+
+        </div>
+        <div class="col bg-body">
+            <a class="btn link-danger" href="/">To return</a>
+        </div>
+
     </div>
 
     <div class="m-1 p-1">
@@ -33,7 +45,7 @@
 
             <div class="form-group">
                 <label asp-for="Password">Password:</label>
-                <input asp-for="Password" class="form-control" type="password"/>
+                <input asp-for="Password" class="form-control" type="password" />
             </div>
 
             <button class="btn btn-primary" type="submit">Log In</button>
